@@ -1,0 +1,189 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Consignment</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'assets/img/logo2.png' %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+<style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            padding: 20px;
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+
+        }
+        button {
+            margin-top: 10px;
+        }
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+    .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation: changeBackground 10s infinite alternate; /* Change the duration (10s) as needed */
+}
+
+.content {
+    padding: 20px;
+    /* Your content styling */
+}
+
+@keyframes changeBackground {
+        0% { background-image: url("{% static 'assets/img/back1.jpg' %}"); }
+        20% { background-image: url("{% static 'assets/img/back2.jpg' %}"); }
+        50% { background-image: url("{% static 'assets/img/back3.jpg' %}"); }
+        75% { background-image: url("{% static 'assets/img/back4.jpg' %}"); }
+        100% { background-image: url("{% static 'assets/img/back5.jpg' %}"); }
+    }
+
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        }
+
+        button {
+            margin-top: 10px;
+        }
+       @media only screen and (max-width: 600px) {
+        .container {
+            width: 100% !important;
+            padding: 10px !important;
+        }
+        .content {
+            font-size: 16px !important;
+        }
+    }
+	img{
+       max-width: 100%;
+       height: auto;
+    }
+    .button {
+    	padding: 10px 20px;
+    	font-size: 16px;
+	}
+    </style>
+
+</head>
+<body>
+<!--PreLoader-->
+    <div class="loader">
+        <div class="loader-inner">
+            <div class="circle"></div>
+        </div>
+    </div>
+    <!--PreLoader Ends-->
+
+	<!-- header -->
+	<div class="top-header-area" id="sticker">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-sm-12 text-center">
+					<div class="main-menu-wrap">
+						<!-- logo -->
+						<div class="site-logo">
+							<a href="index.html">
+								<!--<img src="{% static 'assets/img/logo.png' %}" alt="">-->
+							</a>
+						</div>
+						<!-- logo -->
+<!-- menu start -->
+                    {% include 'user_nav.html' %}
+                    <!-- menu end -->
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end header -->
+
+<div class="background-container"></div>
+    <div class="content">
+        <h1>Consignment Tracker</h1>
+
+        <form method="GET" action="{% url 'user_search_results' %}" style="margin:auto 450px">
+            <div class="form-group">
+                <label for="tracking_number">Tracking Number:</label>
+                <input type="text" class="form-control" id="tracking_number" name="tracker_id" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Search Track</button>
+        </form>
+	</div>
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+	<!-- jquery -->
+	<script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'assets/js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'assets/js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'assets/js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'assets/js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>

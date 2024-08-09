@@ -1,0 +1,22 @@
+					<nav class="main-menu" style="background-color: #051922;  padding: 10px 10px;">
+
+							<ul>
+								<li><a href="{% url 'user_home' %}">Home</a></li>
+
+								<li><a href="about.html">About</a></li>
+								<li><a href="#">Consignment</a>
+									<ul class="sub-menu">
+										<li><a href="{% url 'user_view_consignment' %}">View Consignment</a></li>
+
+									</ul>
+								</li>
+								<li><a href="news.html">Tracker</a>
+									<ul class="sub-menu">
+										<li><a href="{% url 'user_search_results' %}">View Track</a></li>
+									</ul>
+								</li>
+								<li><a href="{% url 'index' %}">LogOut</a></li>
+
+
+							</ul>
+						</nav>

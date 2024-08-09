@@ -1,0 +1,291 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+    <!-- title -->
+    <title>Consignment</title>
+
+    <!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'assets/img/logo2.png' %}">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+    <!-- animate css -->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+    <!-- mean menu css -->
+    <link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+    <!-- main style -->
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+    <!-- responsive -->
+    <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+    <style>
+        body {
+            background-color: #f0f0f0; /* light gray */
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .table-container {
+            display: flex;
+
+        }
+
+        .table-wrapper {
+            width: 100%; /* Adjust the width as needed */
+            overflow-x: auto;
+        }
+
+        .custom-row {
+            height: 50px; /* Adjust the height as needed */
+        }
+
+        .action-btns {
+            display: flex;
+            gap: 5px;
+        }
+
+        /* Increase font size and padding for table content */
+        .table th,
+        .table td {
+            font-size: 16px; /* Adjust font size as needed */
+            padding: 12px; /* Adjust padding as needed */
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            animation: changeBackground 10s infinite alternate; /* Change the duration (10s) as needed */
+        }
+
+        .content {
+            padding: 20px;
+            /* Your content styling */
+        }
+
+       @keyframes changeBackground {
+        0% { background-image: url("{% static 'assets/img/back1.jpg' %}"); }
+        20% { background-image: url("{% static 'assets/img/back2.jpg' %}"); }
+        50% { background-image: url("{% static 'assets/img/back3.jpg' %}"); }
+        75% { background-image: url("{% static 'assets/img/back4.jpg' %}"); }
+        100% { background-image: url("{% static 'assets/img/back5.jpg' %}"); }
+    }
+
+        form {
+            background-color: #fff;
+            padding: 0px;
+            border-radius: 10px;
+            width: 100%
+
+        }
+        form table td {
+        background-color: #fff; /* Add your desired background color here */
+        }
+        @media only screen and (max-width: 600px) {
+        .container {
+            width: 100% !important;
+            padding: 10px !important;
+        }
+        .content {
+            font-size: 16px !important;
+        }
+    }
+	    img{
+            max-width: 100%;
+            height: auto;
+        }
+        .button {
+    	padding: 10px 20px;
+    	font-size: 16px;
+	}
+
+    </style>
+
+</head>
+<body>
+
+<!--PreLoader-->
+<div class="loader">
+    <div class="loader-inner">
+        <div class="circle"></div>
+    </div>
+</div>
+<!--PreLoader Ends-->
+
+<!-- header -->
+<div class="top-header-area" id="sticker">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 text-center">
+                <div class="main-menu-wrap">
+                    <!-- logo -->
+                    <div class="site-logo">
+                        <a href="index.html">
+                            <!--<img src="{% static 'assets/img/logo.png' %}" alt="">-->
+                        </a>
+                    </div>
+                    <!-- logo -->
+
+                    <!-- menu start -->
+                    {% include 'nav.html' %}
+                    <!-- menu end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end header -->
+<div class="background-container"></div>
+<div class="content">
+    <div class="container" style="margin:100px; width: 100%; overflow-x: auto;">
+        <h2>Consignment Details</h2>
+        <div class="table-container">
+            <div class="table-wrapper">
+                <form method="get" style="width:1500px">
+                    <table class="table table-striped table-bordered">
+                        <colgroup>
+                            <col style="width: 10%;"> <!-- Adjust the width as needed -->
+                            <col style="width: 15%;">
+                            <col style="width: 10%;">
+                            <col style="width: 15%;">
+                            <col style="width: 15%;">
+                            <col style="width: 10%;">
+                            <col style="width: 15%;">
+                            <col style="width: 15%;">
+                            <col style="width: 20%;">
+                            <col style="width: 15%;">
+                        </colgroup>
+                        <thead class="table-dark">
+                        <tr>
+                            <th scope="col">Tracking Number</th>
+                            <th scope="col">From</th>
+                            <th scope="col">To</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Qty</th>
+                            <th scope="col">Weight</th>
+                            <th scope="col">Sender Name</th>
+                            <th scope="col">Sender Mobile</th>
+                            <th scope="col">Sender Address</th>
+                            <th scope="col">Receive Namer</th>
+                            <th scope="col">Receiver Mobile</th>
+                            <th scope="col">Receiver Address</th>
+                            <th scope="col">Receiver Company Address</th>
+                            <th>GST</th>
+                            <th scope="col">Freight</th>
+                            <th scope="col">Hamali</th>
+                            <th scope="col">Door Charge</th>
+                            <th scope="col">ST Charge</th>
+                            <th scope="col">Cost</th>
+                            <th>Pay status</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+
+                        <tbody>
+                        {% for r in userdata %}
+                        <tr class="custom-row">
+                            <td>{{r.track_id}}</td>
+                            <td>{{r.route_from}}</td>
+                            <td>{{r.route_to}}</td>
+                            <td>{{r.desc_product}}</td>
+                            <td>{{r.qty}}</td>
+                            <td>{{r.weight}}</td>
+                            <td>{{r.sender_name}}</td>
+                            <td>{{r.sender_mobile}}</td>
+                            <td>{{r.sender_address}}</td>
+                            <td>{{r.receiver_name}}</td>
+                            <td>{{r.receiver_mobile}}</td>
+                            <td>{{r.receiver_address}}</td>
+                            <td>{{r.receiver_company}}</td>
+                            <td>{{r.gst}}</td>
+                            <td>{{r.freight}}</td>
+                            <td>{{r.hamali}}</td>
+                            <td>{{r.door_charge}}</td>
+                            <td>{{r.st_charge}}</td>
+                            <td>{{r.total_cost}}</td>
+                            <td>{{r.pay_status}}</td>
+                            <td>{{r.date}}</td>
+                            <td class="action-btns">
+                                <a href="{% url 'consignment_edit' r.id %}" class="btn btn-info btn-lg">Edit</a>
+                                <a href="{% url 'consignment_delete' r.id %}" class="btn btn-danger btn-lg">Delete</a>
+                                <a href="{% url 'invoiceConsignment' r.id %}" class="btn btn-primary btn-lg">Receipt</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- copyright -->
+<div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                <p>Copyrights &copy; 2024 ,  All Rights Reserved.<br>
+						Designed and Developed  By - <a href="https://flowercreeper.com/index.php">Flower Creeper</a>
+					</p>
+            </div>
+            <div class="col-lg-6 text-right col-md-12">
+                <div class="social-icons">
+                    <ul>
+                        <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end copyright -->
+
+<!-- jquery -->
+<script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+<!-- bootstrap -->
+<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+<!-- count down -->
+<script src="{% static 'assets/js/jquery.countdown.js' %}"></script>
+<!-- isotope -->
+<script src="{% static 'assets/js/jquery.isotope-3.0.6.min.js' %}"></script>
+<!-- waypoints -->
+<script src="{% static 'assets/js/waypoints.js' %}"></script>
+<!-- owl carousel -->
+<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+<!-- magnific popup -->
+<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+<!-- mean menu -->
+<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+<!-- sticker js -->
+<script src="{% static 'assets/js/sticker.js' %}"></script>
+<!-- main js -->
+<script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+</html>
